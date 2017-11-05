@@ -1,3 +1,5 @@
+import Time from "./time.js";
+
 var Timers = {
   timers: [],
   addTimer: function(timerObj) {
@@ -14,3 +16,5 @@ var Timers = {
     };
   },
 };
+
+export default Timers;

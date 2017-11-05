@@ -17,3 +17,5 @@ const Time = {
     return milliseconds;
   }
 };
+
+export default Time;

@@ -1,3 +1,5 @@
+import App from "./app.js";
+
 function createElement(descriptor) {
   let elmDescriptor = {
     type: "div",
@@ -22,10 +24,10 @@ function createElement(descriptor) {
   });
 
   if (elmDescriptor.name) {
-    Globals.domReferences[elmDescriptor.name] = elm;
+    App.domReferences[elmDescriptor.name] = elm;
   }
 
   return elm;
 }
 
-
+export default createElement; 

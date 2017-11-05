@@ -1,4 +1,4 @@
-var storage = {
+const Storage = {
   set: function(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
     return key;
@@ -7,3 +7,5 @@ var storage = {
     return JSON.parse(localStorage.getItem(key) || {});
   }
 };
+
+export default Storage;

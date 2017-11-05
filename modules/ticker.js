@@ -1,5 +1,8 @@
+import Time from "./time.js";
+import App from "./app.js";
+
 var tick = function() {
-  document.body.dispatchEvent(new CustomEvent("tick"));
+  App.dispatchEvent(new CustomEvent("tick"));
 };
-//window.setInterval(tick, Time.minute);
-window.setInterval(tick, 6000);
+
+window.setInterval(tick, Time.minute);

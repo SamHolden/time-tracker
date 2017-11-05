@@ -1,3 +1,5 @@
+import Time from "./time.js";
+
 var GameTime = {
   time: 1509901265087,
   factor: 1,
@@ -11,3 +13,4 @@ var GameTime = {
   }
 };
 
+export default GameTime;
