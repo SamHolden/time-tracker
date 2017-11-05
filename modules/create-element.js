@@ -1,6 +1,4 @@
-import App from "./app.js";
-
-function createElement(descriptor) {
+const createElement = function(descriptor) {
   let elmDescriptor = {
     type: "div",
     attrs: [],
@@ -24,10 +22,12 @@ function createElement(descriptor) {
   });
 
   if (elmDescriptor.name) {
-    App.domReferences[elmDescriptor.name] = elm;
+    createElement.domReferences[elmDescriptor.name] = elm;
   }
 
   return elm;
-}
+};
+
+createElement.domReferences = {};
 
 export default createElement; 

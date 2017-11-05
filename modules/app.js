@@ -1,11 +1,13 @@
 import createElement from "./create-element.js";
 import GameTime from "./game-time.js";
+import AppView from "./app-view.js";
 import "./ticker.js";
 
 const App = {
   init: function() {
-    document.body.appendChild(App.domNode);
+    App.domNode.appendChild(AppView());
     App.addEventListener("tick", App.update);
+    document.body.appendChild(App.domNode);
   },
   domNode: createElement({
     type: "div",
@@ -18,14 +20,15 @@ const App = {
   }),
   update: function() {
     if (GameTime.update()) {
-      // update view
-      console.log("updated view");
+      App.render();
       return true;
     }
-    console.log("did not update view");
     return false;
   },
-  domReferences: {},
+  render: function() {
+    App.domNode.removeChild(App.domNode.firstChild);
+    App.domNode.appendChild(AppView());
+  },
   addEventListener: function(eventName, handler) {
     App.domNode.addEventListener(eventName, handler);
   },
